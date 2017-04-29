@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Building.cs" />
      <Compile Include="Assets\Ground.cs" />
      <Compile Include="Assets\Obstacle.cs" />
      <Compile Include="Assets\Runner.cs" />

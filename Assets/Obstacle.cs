@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
 
-	// Use this for initialization
+	public Rigidbody2D _rigidbody;
+	public Transform _transform;
+	public BoxCollider2D _collider;
+	public Sprite[] textures;
+
 	void Start () {
-		
+		_transform = GetComponent(typeof(Transform)) as Transform;
+		_rigidbody = GetComponent(typeof(Rigidbody2D)) as Rigidbody2D;
+		_collider = GetComponent(typeof(BoxCollider2D)) as BoxCollider2D;
+		_rigidbody.freezeRotation = true;
 	}
 	
 	// Update is called once per frame
