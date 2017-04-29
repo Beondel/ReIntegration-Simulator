@@ -46,7 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Ground.cs" />
+     <Compile Include="Assets\Obstacle.cs" />
      <Compile Include="Assets\Runner.cs" />
+     <Compile Include="Assets\Spawner.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>

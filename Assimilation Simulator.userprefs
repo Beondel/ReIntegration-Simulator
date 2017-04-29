@@ -1,8 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Runner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Obstacle.cs">
     <Files>
-      <File FileName="Assets/Runner.cs" Line="10" Column="12" />
+      <File FileName="Assets/Spawner.cs" Line="13" Column="16" />
+      <File FileName="Assets/Runner.cs" Line="16" Column="36" />
+      <File FileName="Assets/Obstacle.cs" Line="18" Column="12" />
+      <File FileName="../../../../Shared/Unity/2DTowerGuard/Assets/garbageCollection.cs" Line="19" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
