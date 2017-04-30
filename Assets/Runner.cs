@@ -46,7 +46,8 @@ public class Runner : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "antispawn") {
 			GameObject.Find ("lossScreen").transform.position = new Vector2 (15f, 12f);
-		} else if (other.gameObject.tag == "boss") {
+		}
+		if (other.gameObject.tag == "b8") {
 			GameObject.Find ("winScreen").transform.position = new Vector2 (15f, 12f);
 		} 
 		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Finish");
