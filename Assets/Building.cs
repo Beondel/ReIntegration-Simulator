@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Building : MonoBehaviour {
 
+	public float totalDistanceTravelled;
+
 	// Use this for initialization
 	void Start () {
-		
+		totalDistanceTravelled = 0f;
 	}
 	
 	// Update is called once per frame
