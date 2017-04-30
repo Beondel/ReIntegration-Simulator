@@ -10,6 +10,7 @@ public class Obstacle : MonoBehaviour {
 	public Sprite[] textures;
 
 	void Start () {
+		Physics2D.IgnoreCollision (GetComponent<Collider2D>(), GameObject.FindGameObjectWithTag ("b8").GetComponent<Collider2D>());
 		_transform = GetComponent(typeof(Transform)) as Transform;
 		_rigidbody = GetComponent(typeof(Rigidbody2D)) as Rigidbody2D;
 		_collider = GetComponent(typeof(BoxCollider2D)) as BoxCollider2D;

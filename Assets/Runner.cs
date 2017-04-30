@@ -23,6 +23,10 @@ public class Runner : MonoBehaviour {
 		movement ();
 	}
 
+	bool isOnGround(Collider2D other){
+		return _collider.IsTouching (other);
+	}
+
 	void movement(){
 		if (isOnGround(GameObject.Find("ground_placeholder").GetComponent<Collider2D>())){
 			if (Time.frameCount % 2 == 0) {
@@ -34,11 +38,7 @@ public class Runner : MonoBehaviour {
 			this.gameObject.GetComponent<SpriteRenderer> ().sprite = textures [4];
 		}
 	}
-
-	bool isOnGround(Collider2D other){
-		return _collider.IsTouching (other);
-	}
-
+		
 	void runAnimation(int time){
 		GetComponent<SpriteRenderer> ().sprite = textures [time % 8];
 	}
@@ -46,20 +46,19 @@ public class Runner : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "antispawn") {
 			GameObject.Find ("lossScreen").transform.position = new Vector2 (15f, 12f);
+			GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Finish");
+			for (int i = 1; i < obstacles.Length; i++) {
+				Destroy (obstacles [i]);
+			}
+			GameObject.FindGameObjectWithTag ("restart").transform.position = new Vector2 (Screen.width / 2, (Screen.height / 2) - 150);
+			gameOver = true;
 		}
-		if (other.gameObject.tag == "b8") {
-			GameObject.Find ("winScreen").transform.position = new Vector2 (15f, 12f);
-		} 
-		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Finish");
-		for (int i = 1; i < obstacles.Length; i++) {
-			Destroy (obstacles [i]);
-		}
-		GameObject.FindGameObjectWithTag ("restart").transform.position = new Vector2 (Screen.width / 2, (Screen.height / 2) - 150);
-		gameOver = true;
 	}
 
 	public void restart() {
-		this.gameObject.transform.position = new Vector2 (6.61f, 8.11f);
+		this.gameObject.transform.position = new Vector2 (6.73f, 8.11f);
+		GameObject.FindGameObjectWithTag ("b9").GetComponent<Runner2> ().restart ();
+
 
 		GameObject.FindGameObjectWithTag ("b1").transform.position = new Vector2 (11.96f, 8.11f);
 		GameObject.FindGameObjectWithTag ("b2").transform.position = new Vector2 (24.63f, 8.11f);
